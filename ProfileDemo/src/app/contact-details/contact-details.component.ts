@@ -13,15 +13,12 @@ export class ContactDetailsComponent implements OnInit {
   //   mobileNo: "7387029671"
   // };
 
-  contact : Contact = new Contact();
-  names : string[] =  ["vinit"];
+  contact : Contact = new Contact();  
   constructor() { }
 
   ngOnInit() {
     this.contact.email = "keyurjava27@gmail.com";
-    this.contact.mobileNo = "7387209671";
-    this.names.push("denish");
-    this.names.push("keyur");
+    this.contact.mobileNo = "7387209671";    
   }
 
 }

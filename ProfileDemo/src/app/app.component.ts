@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Profile Demo';
+  flag = true;
+  sayHello(age:string):void{
+    console.log("Hello Radhe Krishna...!"+age);    
+  }
 }

@@ -1,9 +1,37 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 bg-info text-white">
       <h1>{{title}}</h1>
     </div>
   </div>
-  <app-personal-details></app-personal-details>
-  <app-contact-details></app-contact-details>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary">
+          Personal Details
+        </div>
+        <div class="card-body">
+          <app-personal-details></app-personal-details>
+        </div>       
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-warning">
+      Contact Details
+    </div>
+    <div class="card-body">
+      <app-contact-details></app-contact-details>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-dark text-white">
+      Skill Details
+    </div>
+    <div class="card-body">
+      <app-skill-list></app-skill-list>
+    </div>
+  </div>  
 </div>
+<input type=text name=age #age />
+<button class="btn btn-info" [disabled]="flag" (click)="sayHello(age.value)">Click Me</button>
