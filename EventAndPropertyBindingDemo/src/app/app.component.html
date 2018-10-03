@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <input type=text class="form-control" name=friendName #friendName (change)="txtChange(friendName.value)" />      
+    </div>
+    <div class="col-4">
+      <button (click)="addFriend(friendName.value)" class="btn btn-success">Add New Firend</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul *ngFor="let name of friendsList;let i=index">
+        <li>{{name}} <button class="btn btn-danger" (click)="delete(i)">Delete</button></li>        
+      </ul>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-md-6">
+      <select name=city class="form-control" #city (change)="setSelectedCity(city.value)">
+        <option value="-1">-:Select City:-</option>
+        <option *ngFor="let city of cityObjList" [value]="city.code">
+          {{city.desc}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      Selected City is : {{selectedCity}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-student-list></app-student-list>    
+    </div>
+  </div>
+</div>
+

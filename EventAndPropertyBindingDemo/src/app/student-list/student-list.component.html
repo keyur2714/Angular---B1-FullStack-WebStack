@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+    </tr>    
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList" (click)="setSelectedStudent(student)" [class.selected]="selectedStudent === student" >
+      <td>{{student.rollNo}}</td>
+      <td>{{student.name}}</td>
+    </tr>
+  </tbody>
+</table>
+Selected Student = {{selectedStudent.name}}
