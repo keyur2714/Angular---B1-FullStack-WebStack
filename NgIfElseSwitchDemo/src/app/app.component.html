@@ -1,0 +1,80 @@
+<div class="container">
+<h1>{{title}}</h1>
+
+<div class="row">
+  <div class="col">
+    <input type=text class="form-control" name=age [(ngModel)]="age" />
+  </div>  
+</div>
+<div class="row">
+  <div class="col">
+    <button class="btn btn-info" (click)="checkEligibility()">Check Eligibility</button>
+  </div>  
+</div>
+<div class="row">
+  <div class="col" *ngIf="isEligible">
+    You are Eligible for Voting...!
+  </div>  
+  <div class="col" *ngIf="! isEligible">
+    You are Not Eligible for Voting...!
+  </div>  
+</div>
+<div class="row" *ngIf="isEligible;then ifBlock;else elseBlock">  
+</div>
+<ng-template #ifBlock>  
+  <div class="col">
+    You are Eligible for Voting...!
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="col">
+    You are Not Eligible for Voting...!
+  </div>
+</ng-template>
+
+  <div class="row">
+     <div class="col">
+       <input type=text class="form-control" name=per [(ngModel)]="per" />
+     </div> 
+  </div>
+  <div class="row">
+    <div class="col">
+     <button class="btn btn-info" (click)="calculateGrade()">calculateGrade</button>
+    </div>  
+  </div>
+  <div class="row">
+     <div class="col">
+       {{grade}}
+     </div> 
+  </div>
+  <div class="row">
+     <div class="col" [ngSwitch]="grade">
+      <span *ngSwitchCase = "'Dist'">
+         <button type="button" class="btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> {{grade}}
+        </button>
+      </span>          
+      <span *ngSwitchCase = "'First'">
+         <button type="button" class="btn btn-primary btn-mg">
+          <span class="glyphicon glyphicon-plus"></span> {{grade}}
+        </button>
+      </span>          
+      <span *ngSwitchCase = "'Second'">
+         <button type="button" class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-plus"></span> {{grade}}
+        </button>
+      </span>          
+      <span *ngSwitchCase = "'Pass'">
+         <button type="button" class="btn btn-warning btn-xs">
+          <span class="glyphicon glyphicon-plus"></span> {{grade}}
+        </button>
+      </span>          
+      <span *ngSwitchCase = "'Fail'">
+         <button type="button" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> {{grade}}
+        </button>
+      </span>          
+     </div> 
+  </div>  
+    <button style="font-size:24px">Button <i class="fa fa-bold"></i></button>
+</div>
