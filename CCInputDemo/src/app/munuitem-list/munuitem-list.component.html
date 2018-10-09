@@ -1,0 +1,24 @@
+<!-- <table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Id #</th>
+      <th>Code</th>
+      <th>Desc</th>
+      <th>Unit Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let menuItem of menuList">
+      <td>{{menuItem.id}}</td>
+      <td>{{menuItem.code}}</td>
+      <td>{{menuItem.desc}}</td>
+      <td>{{menuItem.unitPrice}}</td>      
+    </tr>
+  </tbody>
+</table> -->
+<app-custom-grid
+  [headerList]="headerList"
+  [columnList]="columnList"
+  [dataList]="menuList"
+>
+</app-custom-grid>

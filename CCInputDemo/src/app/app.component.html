@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <app-message [msg]="myMessage" [messageType]="'info'">
+        </app-message>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">  
+      <app-message [msg]="'Hello Radhe Krishna...!'" [messageType]="'success'">
+      </app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message>
+      </app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [msg]="errorMessage" [messageType]="'error'">
+      </app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-munuitem-list></app-munuitem-list>
+    </div>
+  </div>
+</div>

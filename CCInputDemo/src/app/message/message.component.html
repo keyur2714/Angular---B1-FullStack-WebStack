@@ -1,0 +1,18 @@
+
+  <div [ngSwitch]="msgType">
+      <div *ngSwitchCase="'default'" class="alert alert-default">
+        {{msg}}
+      </div>
+      <div *ngSwitchCase="'info'" class="alert alert-info">
+        {{msg}}
+      </div>
+      <div *ngSwitchCase="'success'" class="alert alert-success">
+        {{msg}}
+      </div>
+      <div *ngSwitchCase="'error'" class="alert alert-danger">
+        {{msg}}
+      </div>
+      <div *ngSwitchCase="'warning'" class="alert alert-warning">
+        {{msg}}
+      </div>    
+  </div>
