@@ -1,0 +1,6 @@
+<select [(ngModel)]="selectedCountry" (change)="setSelectedValue()">
+  <option value="-1">-:Select Country:-</option>
+  <option *ngFor="let country of countryList" [ngValue]="country">
+    {{country.desc}}
+  </option>
+</select>

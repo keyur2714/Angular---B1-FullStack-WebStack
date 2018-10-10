@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<app-reverse-string (revstr)="getRevStr($event)"></app-reverse-string>
+<p>
+  Reverse String is : {{revStr}}
+</p>
+<button (click)="checkPalindrom()">Check Palindrom</button>
+
+<app-message [msg]="msg" (getFormattedMsg)="getMessage($event)">
+</app-message>
+<p>
+  {{msg}}
+</p>
+<hr />
+<app-country (getSelectedCountry)="selectedCountry($event)"></app-country>
+
+<p>
+  Selected Country is : {{countryDesc}}
+</p>
