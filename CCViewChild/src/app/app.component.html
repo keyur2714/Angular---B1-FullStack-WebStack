@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+
+Enter Any String : <input type=text #str />
+<p>
+  <button (click)="convert('','U')">Convert UpperCase</button>
+  <button (click)="convert(str.value,'L')">Convert LowerCase</button>
+  <button (click)="convert(str.value,'R')">Reverse String</button>
+</p>
+<p>
+  <app-string-util>Hi..{{result}}</app-string-util>    
+</p>
+
+<h1 #welcomeMsg>
+  Hello Radhe Krishna...!
+</h1>
+
