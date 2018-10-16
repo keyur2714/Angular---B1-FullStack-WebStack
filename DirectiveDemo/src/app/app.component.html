@@ -1,0 +1,30 @@
+<h1 appCustomeStyle [color]="'green'" [bgColor]="'grey'" #h>{{title}}</h1>
+<div style="width:100px ;height: 100px;" appCustomeStyle [fontSize]="'30px'" [color]="'pink'" #d>
+  Hi
+</div>
+
+<select (change)="changeColor(selectColor.value)" #selectColor>
+  <option>-:Select Color:-</option>
+  <option value="Red">Red</option>
+  <option value="Green">Green</option>
+  <option value="Blue">Blue</option>
+</select>
+
+<hr/> 
+<h1 *appMyIf="false">
+  Structural Directives
+</h1>
+
+<h3 *appMyLoop="5">
+  Hello Radhe Krishna...!
+</h3>
+
+<ng-template [appMyIf]="false"]>
+  Hello Keyur
+</ng-template>
+
+<ng-template [appMyLoop]="5" [extra]="Hi">
+  Hi
+</ng-template>
+
+
