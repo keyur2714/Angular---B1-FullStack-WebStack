@@ -1,0 +1,53 @@
+<div class="card">
+ <div class="card-header">
+  Student Inquiry Entry
+ </div>
+ <div class="card-body">
+    <form #frm="ngForm" (ngSubmit)="save(frm)">
+      <div class="row form-group">
+        <div class="col-md-2"><label>Roll No</label></div>
+        <div class="col-md-6">
+          <input type=text name=rollNo class="form-control" [(ngModel)]="student.rollNo" #rollNo=ngModel required />
+        </div>
+        <div class="col-md-4">
+          <div *ngIf="rollNo.errors">
+              <span *ngIf="rollNo.invalid && rollNo.touched && rollNo.errors.required">
+                RollNo is Required Field it can not be Blank.
+              </span>              
+          </div>
+        </div>          
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Name</label></div>
+        <div class="col-md-6">
+          <input type=text name=name class="form-control" [(ngModel)]="student.name" #name=ngModel required minlength="3"/>
+        </div>
+        <div class="col-md-4">
+          <div *ngIf="name.errors">
+              <span *ngIf="name.invalid && name.touched && name.errors.required">
+                Name is Required Field.
+              </span>              
+              <span *ngIf="name.invalid && name.touched && name.errors.minlength">
+                Min 3 Char Required in Name.
+              </span>              
+          </div>
+        </div>          
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-info" [disabled]="frm.invalid">Submit</button>
+        </div>
+      </div>
+    </form>  
+  </div>
+  <div class="card-footer">
+    <div class="row" *ngIf="frm.valid && isSubmitted">
+      <div class="col">
+        RollNo is : {{student.rollNo}}
+      </div>
+      <div class="col">
+        Name is : {{student.rollNo}}
+      </div>
+    </div>    
+  </div>
+</div>

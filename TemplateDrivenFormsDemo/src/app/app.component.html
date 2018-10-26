@@ -1,0 +1,34 @@
+<div class="container">
+  <app-student-entry></app-student-entry>
+  <!-- <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+    <form #frm="ngForm" (ngSubmit)="save(frm)">
+      <div class="row">
+        <div class="col-md-2"><label></label>Name</div>
+        <div class="col-md-6">
+          <input type=text name=name class="form-control" ngModel #name=ngModel required minlength="5"/>
+        </div>
+        <div class="col-md-4">
+          <div *ngIf="name.errors">
+              <span *ngIf="name.invalid && name.touched && name.errors.required">
+                Name is Required Field it can not be Blank.
+              </span>
+              <span *ngIf="name.invalid && name.touched && name.errors.minlength">
+                Min 5 Char Name is Required.
+              </span>
+          </div>
+        </div>          
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-info" [disabled]="frm.invalid">Submit</button>
+        </div>
+      </div>
+    </form>  
+    <div class="row" *ngIf="frm.valid && isSubmitted">
+      Name is : {{nm}}
+    </div> -->
+</div>
