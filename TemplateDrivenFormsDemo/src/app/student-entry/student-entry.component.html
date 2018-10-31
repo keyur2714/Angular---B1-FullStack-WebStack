@@ -33,6 +33,63 @@
           </div>
         </div>          
       </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Mobile No</label></div>
+        <div class="col-md-6">
+          <input type=text name=mobileNo class="form-control" [(ngModel)]="student.mobileNo" #mobileNo=ngModel required />
+        </div>
+        <div class="col-md-4">
+          <div *ngIf="mobileNo.errors">
+              <span *ngIf="mobileNo.invalid && mobileNo.touched && mobileNo.errors.required">
+                Mobile No is Required Field.
+              </span>                            
+          </div>
+        </div>          
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Email</label></div>
+        <div class="col-md-6">
+          <input type=text name=email class="form-control" [(ngModel)]="student.email" #email=ngModel required />
+        </div>
+        <div class="col-md-4">
+          <div *ngIf="email.errors">
+              <span *ngIf="email.invalid && email.touched && email.errors.required">
+                Email is Required Field.
+              </span>                            
+          </div>
+        </div>          
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Gender</label></div>
+        <div class="col-md-6">
+          <label class="radio-inline">
+            <input type=radio name=gender [(ngModel)]="student.gender" value="M" />Male
+          </label>
+          <label class="radio-inline">  
+            <input type=radio name=gender [(ngModel)]="student.gender" value="F"/>Female
+          </label>
+        </div>        
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Course</label></div>
+        <div class="col-md-6">          
+          <select name=course class="form-control" [(ngModel)]="student.course">
+            <option value="-1">-:Select:-</option>
+            <option *ngFor="let course of courseList" [ngValue]="course">
+              {{course.name}}
+            </option>
+          </select>
+        </div>        
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Reffered By</label></div>
+        <div class="col-md-6">          
+          <label class="checkbox-inline"><input type="checkbox" name=refferedBy1 [(ngModel)]="student.refferedBy" value="NEWS">News</label>
+          <label class="checkbox-inline"><input type="checkbox" name=refferedBy2 [(ngModel)]="student.refferedBy" value="FRIEND">Friends</label>
+          <label class="checkbox-inline"><input type="checkbox" name=refferedBY3 [(ngModel)]="student.refferedBy" value="FB">FaceBook</label>
+          <label class="checkbox-inline"><input type="checkbox" name=refferedBy4 [(ngModel)]="student.refferedBy" value="ADVERTISEMENT">Advertisement</label>
+        </div>        
+      </div>      
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-info" [disabled]="frm.invalid">Submit</button>
