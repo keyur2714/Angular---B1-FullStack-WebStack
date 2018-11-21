@@ -1,0 +1,37 @@
+<div class="container">
+<h1>{{title}}</h1>
+<form [formGroup]="userForm" (ngSubmit)="save()">
+  <div class="row form-group">
+    <div class="col-md-3">
+      <label>Name: </label>
+    </div>
+    <div class="col-md-9">
+      <input type=text class="form-control" formControlName="name" name=name />
+    </div>
+  </div>
+   <div class="row form-group">
+    <div class="col-md-3">
+      <label>City: </label>
+    </div>
+    <div class="col-md-9">
+      <input type=text class="form-control" formControlName="city" name=city />
+      <span *ngIf="userForm.get('city').invalid && userForm.get('city').touched">
+        City is Required Field.
+      </span>
+    </div>
+  </div>
+   <div class="row form-group">
+    <div class="col-md-3">
+      <label>Age: </label>
+    </div>
+    <div class="col-md-9">
+      <input type=text class="form-control" formControlName="age" name=age />
+    </div>
+  </div>
+   <div class="row form-group">
+    <div class="col-md-3">
+      <button class="btn btn-primary">Save</button>
+    </div>    
+  </div>
+</form>
+</div> 
