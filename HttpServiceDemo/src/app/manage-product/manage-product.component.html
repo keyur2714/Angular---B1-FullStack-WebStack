@@ -1,0 +1,79 @@
+<form #f=ngForm (ngSubmit)="saveProduct(f)">
+  <div class="row form-group" *ngIf="statusCode===201">
+    <div class="col alert alert-success">
+      Product Saved Successfully.
+    </div>    
+  </div>
+  <div class="row form-group" *ngIf="statusCode===204">
+    <div class="col alert alert-info">
+      Product Updated Successfully.
+    </div>    
+  </div>
+  <div class="row form-group" *ngIf="statusCode===301">
+    <div class="col alert alert-danger">
+      Product Deleted Successfully.
+    </div>    
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Product Id:</label></div>
+    <div class="col-md-4"><input type=text name=productId [(ngModel)]="newProduct.id" class="form-control" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Code:</label></div>
+    <div class="col-md-4"><input type=text name=code [(ngModel)]="newProduct.code" class="form-control" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Description:</label></div>
+    <div class="col-md-4"><input type=text name=description [(ngModel)]="newProduct.description" class="form-control" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Price:</label></div>
+    <div class="col-md-4"><input type=number name=unitPrice [(ngModel)]="newProduct.unitPrice" class="form-control" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Color:</label></div>
+    <div class="col-md-4"><input type=text name=color [(ngModel)]="newProduct.color" class="form-control" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-2"><label>Warranty:</label></div>
+    <div class="col-md-4"><input type=checkbox name=warranty [(ngModel)]="newProduct.warranty" /></div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-info" *ngIf="!isUpdate">Save</button>&nbsp;
+      <button type="button" class="btn btn-info" (click)="updateProduct(f)" *ngIf="isUpdate">Update</button>&nbsp;
+      <button type="button" class="btn btn-default" (click)="reset(f)">Reset</button>
+    </div>    
+  </div>
+</form>
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Desc</th>
+          <th>Price</th>
+          <th>Color</th>
+          <th>Warranty</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{product.id}}</td>
+          <td>{{product.code}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.unitPrice}}</td>
+          <td>{{product.color}}</td>
+          <td>{{product.warranty}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="edit(product.id)">Edit</button>&nbsp;
+            <button class="btn btn-danger" (click)="delete(product.id)">Delete</button>&nbsp;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

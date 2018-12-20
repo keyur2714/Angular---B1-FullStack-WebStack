@@ -1,4 +1,13 @@
-<h1>
-  {{title}}
-</h1>
-{{productList | json}}
+<div class="container">
+  <div class="row">
+        <div class="col"><h1>{{title}}</h1></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-warning">Product List</div>
+        <div class="card-body"><app-manage-product></app-manage-product></div>         
+      </div>
+    </div>
+  </div>
+</div>
