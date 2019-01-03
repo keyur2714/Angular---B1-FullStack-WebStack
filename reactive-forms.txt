@@ -59,7 +59,7 @@ the instances of FormControl class,
 
 Ex:
 userForm = new FormGroup({
-	name: new FormControl('Keyur, Validators.maxLength(10)),
+	name: new FormControl('Keyur', Validators.maxLength(10)),
 	age: new FormControl(30, Validators.required),
 	city: new FormControl(),
 	country: new FormControl()

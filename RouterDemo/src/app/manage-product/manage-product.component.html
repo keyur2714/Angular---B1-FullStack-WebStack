@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col">
+    <button (click)="addNewProduct()" class="btn btn-info">New Product</button>
+  </div>
+</div>
+<div class="row">  
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Desc</th>
+          <th>Price</th>
+          <th>Color</th>
+          <th>Warranty</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>
+            <a [routerLink]="['/product',product.id]">{{product.id}}</a>
+          </td>
+          <td>{{product.code}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.unitPrice}}</td>
+          <td>{{product.color}}</td>
+          <td>{{product.warranty}}</td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+    <div class="col"><router-outlet></router-outlet></div>      
+</div>
